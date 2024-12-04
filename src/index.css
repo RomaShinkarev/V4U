@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@font-face {
+  font-family: 'Donpoligrafbum';
+  src: url('/fonts/Donpoligrafbum.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --color-primary: #121212;
+  --color-secondary: #909090;
+  --color-accent: #2A2A2A;
+  --color-light: #F7F7FF;
+}
+
+body {
+  background-color: var(--color-primary);
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-donpoligrafbum {
+  font-family: 'Donpoligrafbum', sans-serif;
+  font-size: 1.1em;
+  letter-spacing: 0.02em;
+}
+
+/* Gradient scroll effects */
+.gradient-scroll {
+  background: linear-gradient(180deg, 
+    rgba(18, 18, 18, 0) 0%,
+    rgba(144, 144, 144, 0.1) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(144, 144, 144, 0.1) 75%,
+    rgba(18, 18, 18, 0) 100%
+  );
+  background-size: 100% 400%;
+  animation: gradientScroll 8s linear infinite;
+}
+
+@keyframes gradientScroll {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 400%; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Intersection Observer animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gradient text animation */
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff, #909090, #ffffff);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+  to {
+    background-position: 200% center;
+  }
+}
